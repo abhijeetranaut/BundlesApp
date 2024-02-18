@@ -1,0 +1,31 @@
+﻿@page
+@model InventoryCalculatorModel
+@{
+    ViewData["Title"] = "Inventory Calculator";
+}
+
+<h1>Inventory Calculator</h1>
+
+<form method="post">
+    <div>
+        <label for="bundleName">Bundle Name:</label>
+        <input type="text" id="bundleName" name="bundleName" required>
+    </div>
+    <div>
+        <label for="partsInventory">Parts Inventory:</label>
+        <textarea id="partsInventory" name="partsInventory" required></textarea>
+    </div>
+    <div>
+        <label for="bundleInventory">Bundle Inventory:</label>
+        <textarea id="bundleInventory" name="bundleInventory" required></textarea>
+    </div>
+    <button type="submit">Calculate</button>
+</form>
+
+@if (Model.MaxBundles.HasValue)
+{
+    <div>
+        <h2>Result</h2>
+        <p>Maximum number of bundles that can be built: @Model.MaxBundles</p>
+    </div>
+}
